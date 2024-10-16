@@ -1,0 +1,6 @@
+[submodule "Wyatt/WLat"]
+	path = Wyatt/WLat
+	url = https://github.com/smithwya/WLat
+[submodule "Wyatt/WStats"]
+	path = Wyatt/WStats
+	url = https://github.com/smithwya/WStats
