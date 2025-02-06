@@ -4,13 +4,13 @@ who='Wyatt'                                                                     
 
 
 [paths_to_files]
-base_path='../W_correlators_L24'
+base_path='../W_correlators_L32'
 mainpath='/xi='
 resultspath='/results/xi='
 resultsdir='/results'
 plotsdir='/plots'
 Gcplotsdir='/Gc_plots'
-sizelabel=24
+sizelabel=32
 
 
 [correlators]
