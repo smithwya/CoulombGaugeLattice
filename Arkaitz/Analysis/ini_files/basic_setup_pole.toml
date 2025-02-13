@@ -33,11 +33,11 @@ als=[[0.99184707, 0.8380484 , 0.70925891, 0.60118146, 0.51030411,
 [minimization_parameters]
 reuse    = 1                                                                                                                            # If ==1, reuse previous best fit (previous model with less parameters) to start new fit (new extra parameters are just input from here)
 inv_first= 0                                                                                                                            # If ==1 then does the inverse of the cov matrix before trimming it to the data region fitted, otherwise it trims first. Remember they are not the same
-mcalls   = 2000                                                                                                                         # Minuit max calls per subroutine
+mcalls   = 5000                                                                                                                         # Minuit max calls per subroutine
 mtol     = 0.0001                                                                                                                       # Minuit tol parameter 
-inipars_GC  = [[0.05,2.0,1.0],[0.05,2.0,1.0,0.1,1.0],[0.05,2.0,1.0,0.1,1.0,0.1,1.0]]                                                                                             # Input pars to fit with
-variants_GC = ['single','double','triple']                                                                                                 # String of nested models to fit with
-jackkl      = 400                                                                                                                      # Number of Jackknife samples to create and propagate
+inipars_GC  = [[0.05,2.0,1.0],[0.05,2.0,1.0,0.1,1.0]]                                                                                             # Input pars to fit with
+variants_GC = ['single','double']                                                                                                 # String of nested models to fit with
+jackkl      = 100000                                                                                                                      # Number of Jackknife samples to create and propagate
 model_Gc    = 'nb_exp_np_pole'                                                                                                               # Model type to fit the data
 model_Vr    = 'nb_VR_line'                                                                                                              # Model type to fit the data
 datatype_Vr ='Vr'                                                                                                                       # What is the data type we are fitting (exp vs dlog(ratio of log(t)/log(t+1) for approximated derivative) vs log?, etc...)

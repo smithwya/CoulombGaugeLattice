@@ -310,7 +310,6 @@ class Modelsmin:     # It is designed to work with nested models ONLY, run it va
                                     if ((chi2-chi2_orig)>max(1,chi2_orig)*25./np.sqrt(len(data_yt)) and chi2>chi2worst):              # Discard Jackknifes that are deviated over "5 sigmas"
                                         flagbreak = True
                                         chi2worst = chi2
-                                        location  = count
                                     elif ((chi2-chi2_orig)<-max(1,chi2_orig)*9./np.sqrt(len(data_yt)) and chi2<chi2best):
                                         flagrepeat=True
                                         inip=jackkpars
@@ -318,10 +317,10 @@ class Modelsmin:     # It is designed to work with nested models ONLY, run it va
                                     count+=1
 
                             if (flagbreak==True):
-                                print("Warning: Jackkknife fit went bananas",chi2_orig,chi2worst,location)
+                                print("Warning: Jackkknife fit went bananas",chi2_orig,chi2worst,count)
 
                             if (flagrepeat==True):
-                                print("Warning: Jackkknife found way better fit, repeating",chi2_orig,chi2best)
+                                print("Warning: Jackkknife found way better fit, repeating",chi2_orig,chi2best,count)
 
 
                             if (flagrepeat==True):
@@ -348,8 +347,8 @@ class Modelsmin:     # It is designed to work with nested models ONLY, run it va
                                     if (flagbreak==True):
                                         break
 
-                            if (flagbreak==False):
-                                listfits.append([self.variants[k],i,i+j-1,ma_orig,np.array(statsfit),len(data_yt),np.array(m.minimize().values),inipp,chi2_orig])  
+                            #if (flagbreak==False):
+                            listfits.append([self.variants[k],i,i+j-1,ma_orig,np.array(statsfit),len(data_yt),np.array(m.minimize().values),inipp,chi2_orig])  
                 inp_previous_range=inp_previous_range_int
         listfits=np.array(listfits, dtype=object)
         return listfits
