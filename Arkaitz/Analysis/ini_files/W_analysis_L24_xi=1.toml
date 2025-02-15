@@ -37,8 +37,8 @@ reuse    = 1                                                                    
 inv_first= 0                                                                                                                            # If ==1 then does the inverse of the cov matrix before trimming it to the data region fitted, otherwise it trims first. Remember they are not the same
 mcalls   = 10000                                                                                                                         # Minuit max calls per subroutine
 mtol     = 0.00001                                                                                                                       # Minuit tol parameter 
-inipars_GC  = [[2.0,2.0],[2.0,2.0,0.1,1.0]]                                                                                             # Input pars to fit with
-variants_GC = ['single','double']                                                                                                       # String of nested models to fit with
+inipars_GC  = [[2.0,2.0],[2.0,2.0,0.1,1.0],[2.0,2.0,0.1,1.0,0.1,1.0],]                                                                                             # Input pars to fit with
+variants_GC = ['single','double','triple']                                                                                                       # String of nested models to fit with
 jackkl      = 100000                                                                                                                        # Number of Jackknife samples to create and propagate
 xiini       = 0                                                                                                                         # Initial xi used
 xifin       = 0                                                                                                                         # Final xi used

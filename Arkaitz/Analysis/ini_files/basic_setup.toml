@@ -4,39 +4,16 @@
 [paths_to_files]
 
 [correlators]
-als=[[0.99184707, 0.8380484 , 0.70925891, 0.60118146, 0.51030411,
-       0.43374687, 0.36914043, 0.31452985, 0.26829752, 0.22910145,
-       0.19582554],
-       [1.13124514, 0.95697771, 0.81084168, 0.68804148, 0.58465058,
-        0.49744333, 0.42376157, 0.36140841, 0.3085632 , 0.26371323,
-        0.22559857],
-       [1.15972581, 0.98107096, 0.83125575, 0.70536389, 0.59936998,
-        0.50996716, 0.43443036, 0.37050737, 0.31633171, 0.27035258,
-        0.23127833],
-       [1.17396615, 0.99311758, 0.84146279, 0.71402509, 0.60672967,
-        0.51622907, 0.43976475, 0.37505685, 0.32021597, 0.27367226,
-        0.23411821],
-       [1.18251036, 1.00034556, 0.84758701, 0.71922181, 0.61114549,
-        0.51998622, 0.44296539, 0.37778654, 0.32254652, 0.27566406,
-        0.23582214],
-       [1.18820649, 1.00516421, 0.85166983, 0.72268629, 0.61408937,
-        0.52249099, 0.44509914, 0.37960633, 0.32410022, 0.27699193,
-        0.23695809],
-       [1.19227516, 1.0086061 , 0.85458612, 0.72516092, 0.61619214,
-        0.52428011, 0.44662326, 0.38090618, 0.32521001, 0.27794041,
-        0.23776948],
-       [1.19532666, 1.01118752, 0.85677334, 0.72701689, 0.61776922,
-        0.52562195, 0.44776634, 0.38188107, 0.32604235, 0.27865177,
-        0.23837803]]
+als=[[0.0776705, 0.0648274, 0.0556056, 0.0487098]]
 
 
 [minimization_parameters]
 reuse    = 1                                                                                                                            # If ==1, reuse previous best fit (previous model with less parameters) to start new fit (new extra parameters are just input from here)
 inv_first= 0                                                                                                                            # If ==1 then does the inverse of the cov matrix before trimming it to the data region fitted, otherwise it trims first. Remember they are not the same
-mcalls   = 5000                                                                                                                         # Minuit max calls per subroutine
-mtol     = 0.0001                                                                                                                       # Minuit tol parameter 
+mcalls   = 10000                                                                                                                         # Minuit max calls per subroutine
+mtol     = 0.00001                                                                                                                       # Minuit tol parameter 
 inipars_GC  = [[2.0,1.0],[2.0,1.0,0.1,1.0]]                                                                                             # Input pars to fit with
-variants_GC = ['single','double']                                                                                                 # String of nested models to fit with
+variants_GC = ['single','double','triple']                                                                                                 # String of nested models to fit with
 jackkl      = 100000                                                                                                                      # Number of Jackknife samples to create and propagate
 datatype_Gc = 'exp_WL' 
 model_Gc    = 'nb_exp_np'                                                                                                              # Model type to fit the data
@@ -47,7 +24,7 @@ variants_Vr =['VR_a']                                                           
 multiprocess= 50                                                                                                                        # Loop parallelization, it parallelizes the Jackknife loop. It does nothing it we do not call a Jackknife fit
 cov_freeze  = 1                                                                                                                       # If ==1, freeze the covariance matrix, aka use the full sample all the times for the Jackknife minimizations
 improve     = 0                                                                                                                        # If > 0, if a local minima is found in the fits, it will look for others better than the first one. The number in this flag just means the number of tries, they need not be sucessful in finding a local minima, or even if they are, they need not be better than the first one.
-multistart  = 10                                                                                                                     # Basic parameter to set the number of random (gaussian) ini_pars vectors created from the initial one provided here. It is used to create this same number of fits to select the best from a more global search
+multistart  = 1000                                                                                                                     # Basic parameter to set the number of random (gaussian) ini_pars vectors created from the initial one provided here. It is used to create this same number of fits to select the best from a more global search
 
 
 [extra]
