@@ -194,7 +194,7 @@ for k in range(len(xirun)):
         data_y              = jackknife(Vdat,jackkl).sample()
         data_cov            = jackknife(Vdat,jackkl).scov()
         data_cov_rescaled   = jackknife(jackknife(Vdat_rescaled,jackkl).sample()).upcov()
-        data_y_rescaled     = jackknife(Vdat_rescaled_gaussian,jackkl).sample()
+        data_y_rescaled     = jackknife(Vdat_rescaled,jackkl).sample()
 
         m=Modelsmin( data_t, data_y, data_cov, dini_Vr, dstop_Vr, dmindata_Vr, dfin_Vr, inipars_Vr, model_Vr, variants_Vr, datatype_Vr, mcalls, mtol, reuse, inv_first, multiprocess, cov_freeze, improve, multistart, no_corrs, no_valid_check, data_cov_rescaled, data_y_rescaled)
         mf=m.jackk_minimize()
