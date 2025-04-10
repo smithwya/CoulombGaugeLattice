@@ -68,7 +68,7 @@ sizelabel      = params['paths_to_files']['sizelabel']
 corrtype       = params['correlators']['corrtype']  
 xi             = params['correlators']['xi']
 beta           = params['correlators']['beta']
-betanorm       = params['correlators']['betanorm']
+
 Lextent        = params['correlators']['Lextent']
 Textent        = params['correlators']['Textent']
 size           = params['correlators']['size']

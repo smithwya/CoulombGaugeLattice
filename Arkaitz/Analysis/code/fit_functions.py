@@ -42,6 +42,17 @@ def line_np_mod(t, *pars):
 
 
 # Polynomial function
+def line_np_mod_bound(t, *pars):
+    t=np.asarray(t).reshape(1, -1)[0,:]
+    total=np.zeros(len(t))
+    for j in range(len(t)):
+        for i in range(1,len(pars)):
+            coef=pars[i]
+            total[j]+= t[j]**(2*i)*coef
+        total[j]+= 1+abs(pars[0])
+    return total  # for len(pars) == 2, this is a line
+
+# Polynomial function
 def line_np(t, *pars):
     total=0
     for i in range(len(pars)):

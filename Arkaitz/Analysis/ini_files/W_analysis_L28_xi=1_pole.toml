@@ -16,11 +16,10 @@ sizelabel=28
 [correlators]
 corrtype='g'                                                                                                                            # Greensite or Wilson correlator
 xi=[1]                                                                                                                                  # Anisotropies
-beta=[634]                                                                                                      # Different betas
-betanorm=100                                                                                                                                # Normalize the beta label to actual values
+beta=[6207121,6336766]                                                                                                      # Different betas
 Lextent=14                                                                                                                              # Extent of available lattice data
 Textent=14                                                                                                                              # T/2 Extent of available lattice data
-size=[14]                                                                                                 # T/2 sizes
+size=[14,14]                                                                                                 # T/2 sizes
 Ncfgs=100000                                                                                                                              # N configs (montecarlo samples) to read
 
 

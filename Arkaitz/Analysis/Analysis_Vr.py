@@ -64,7 +64,7 @@ sizelabel      = params['paths_to_files']['sizelabel']
 corrtype       = params['correlators']['corrtype']  
 xi             = params['correlators']['xi']
 beta           = params['correlators']['beta']
-betanorm       = params['correlators']['betanorm']
+
 Lextent        = params['correlators']['Lextent']
 Textent        = params['correlators']['Textent']
 size           = params['correlators']['size']
@@ -217,4 +217,7 @@ for k in range(len(xirun)):
 for k in range(len(datarun)):
     with open('{}{}/{}_{}_{}_labels_ti{}_{}_tfin{}_tmin{}_rmin{}_{}_rfin{}_nocorrs={}_{}.dat'.format(resultspath,xirun[k],len(variants_Gc),model_Gc,datatype_Gc,diini,dstop_Gc,dfin_Gc,dmindata_Gc,dini_Vr,dstop_Vr,dfin_Vr,no_corrs,corrtype), 'w') as outfile:
         for i in range(len(datarun[0])):
-            outfile.write("$\\beta$={:.2f} $\\chi^2/$dof={:.1f}, {:.1f}\n".format(betarun[i]/betanorm,worstsel[i+k*len(datarun[0])],VRchisq2dof[i+k*len(datarun[0])]))
+            digits_beta = np.log10(betarun[i]).astype(int)
+            betanorm = betarun[i]/10**(digits_beta)
+            outfile.write("$\\beta$={:.2f} $\\chi^2/$dof={:.1f}, {:.1f}\n".format(betanorm,worstsel[i+k*len(datarun[0])],VRchisq2dof[i+k*len(datarun[0])]))
+
