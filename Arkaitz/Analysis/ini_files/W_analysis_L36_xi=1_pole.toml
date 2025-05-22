@@ -16,10 +16,10 @@ sizelabel=36
 [correlators]
 corrtype='g'                                                                                                                            # Greensite or Wilson correlator
 xi=[1]                                                                                                                                  # Anisotropies
-beta=[6388297]                                                                                                      # Different betas
+beta=[6388297,6529116]                                                                                                      # Different betas
 Lextent=18                                                                                                                              # Extent of available lattice data
 Textent=18                                                                                                                              # T/2 Extent of available lattice data
-size=[18]                                                                                                 # T/2 sizes
+size=[18,18]                                                                                                 # T/2 sizes
 Ncfgs=100000                                                                                                                              # N configs (montecarlo samples) to read
 
 
@@ -42,7 +42,7 @@ jackkl      = 100000                                                            
 xiini       = 0                                                                                                                         # Initial xi used
 xifin       = 0                                                                                                                         # Final xi used
 fileini     = 0                                                                                                                         # Of all the data files, ordered by increasing beta, select on which one to start fitting
-filefin     = 0                                                                                                                         # Of all the data files, ordered by increasing beta, select on which one to finish fitting
+filefin     = 1                                                                                                                         # Of all the data files, ordered by increasing beta, select on which one to finish fitting
 datatype_Gc = 'exp'                                                                                                                  # What is the data type we are fitting (exp (or exp_WL) vs dlog(ratio of log(t)/log(t+1) for approximated derivative) vs log?, etc...)
 model_Gc    = 'nb_exp_np_pole'                                                                                                               # Model type to fit the data
 model_Vr    = 'nb_VR_line'                                                                                                              # Model type to fit the data
